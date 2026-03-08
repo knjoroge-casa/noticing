@@ -204,7 +204,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
             {selectedItems.map((item) => (
               <p
                 key={item.id}
-                className={`text-sm font-bold leading-snug ${fontConfig.className}`}
+                className={`text-sm leading-snug ${fontConfig.className}`}
                 style={{
                   color: "white",
                   textShadow: "1px 1px 8px rgba(0,0,0,0.7)",
