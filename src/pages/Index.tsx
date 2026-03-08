@@ -16,11 +16,13 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="flex flex-col items-center justify-center py-6 px-4">
-        <h1 className="font-display text-2xl font-bold text-foreground tracking-tight">
+      <header className="flex flex-col items-center justify-center py-8 px-4">
+        <h1 className="font-display text-3xl font-bold text-foreground tracking-tight">
           Noticing
         </h1>
-        <p className="text-xs text-muted-foreground tracking-widest uppercase mt-1">because gratitude is really about paying attention</p>
+        <p className="text-xs text-muted-foreground tracking-widest uppercase mt-2 text-center">
+          because gratitude is really about paying attention
+        </p>
       </header>
 
       {/* Steps indicator */}
