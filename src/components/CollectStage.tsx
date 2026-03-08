@@ -131,13 +131,12 @@ const CollectStage = ({ onCompose }: Props) => {
           placeholder="Add something you noticed...."
           className="flex-1 bg-card border-border focus-visible:ring-primary"
         />
-        <Button
+        <button
           onClick={handleAdd}
-          size="icon"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 shrink-0"
+          className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0"
         >
           <Plus className="w-5 h-5" />
-        </Button>
+        </button>
       </div>
 
       {/* Items */}
