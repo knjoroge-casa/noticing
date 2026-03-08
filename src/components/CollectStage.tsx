@@ -94,7 +94,7 @@ const CollectStage = ({ onCompose }: Props) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Add something you're grateful for..."
+          placeholder="Add something you noticed...."
           className="flex-1 bg-card border-border focus-visible:ring-primary"
         />
         <Button

@@ -30,7 +30,7 @@ const Index = () => {
       </div>
       {/* Header */}
       <header className="flex flex-col items-center justify-center py-8 px-4">
-        <h1 className="font-display text-3xl font-bold text-foreground tracking-tight">
+        <h1 className="font-display text-4xl font-bold text-foreground tracking-tight">
           Noticing
         </h1>
         <p className="text-xs text-muted-foreground tracking-widest uppercase mt-2 text-center">
