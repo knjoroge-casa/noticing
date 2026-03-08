@@ -51,11 +51,8 @@ const CollectStage = ({ onCompose }: Props) => {
 
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
-      <h2 className="font-display text-3xl font-bold text-foreground mb-1 text-center">
-        Things That Found Me
-      </h2>
-      <p className="text-muted-foreground text-sm mb-6 text-center">
-        the small things, the big things, all the things
+      <p className="text-muted-foreground text-sm mb-6 text-center max-w-sm leading-relaxed">
+        Some days you go looking for joy. Some days it taps you on the shoulder. In a mango that tastes exactly right, a friend who shows up, a walk that clears your head. And sometimes it's in the hard things too, the ones that stretched you, broke you open a little, taught you something you didn't know. Notice all of them.
       </p>
 
       {/* Month selector */}
