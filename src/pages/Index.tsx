@@ -34,35 +34,6 @@ const Index = () => {
         </p>
       </header>
 
-      {/* Steps indicator */}
-      <div className="flex items-center justify-center gap-3 mb-8 px-4">
-        {["Collect", "Compose"].map((s, i) => {
-          const isActive = (i === 0 && stage === "collect") || (i === 1 && stage === "compose");
-          return (
-            <div key={s} className="flex items-center gap-2">
-              <div
-                className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                  isActive
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted text-muted-foreground"
-                }`}
-              >
-                {i + 1}
-              </div>
-              <span
-                className={`text-sm font-medium transition-colors ${
-                  isActive ? "text-foreground" : "text-muted-foreground"
-                }`}
-              >
-                {s}
-              </span>
-              {i === 0 && (
-                <div className="w-8 h-px bg-border mx-1" />
-              )}
-            </div>
-          );
-        })}
-      </div>
 
       {/* Content */}
       <main className="flex-1">
