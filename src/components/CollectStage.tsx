@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Plus, Trash2, ChevronDown } from "lucide-react";
+import { Plus, Trash2, ChevronDown, Copy, Check } from "lucide-react";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,6 +23,7 @@ const CollectStage = ({ onCompose }: Props) => {
   const [selectedMonth, setSelectedMonth] = useState(getCurrentMonthKey());
   const [items, setItems] = useState<GratitudeItem[]>([]);
   const [showMonths, setShowMonths] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const months = getAllMonths();
   const currentLabel = getMonthLabelFromKey(selectedMonth);
@@ -48,6 +49,16 @@ const CollectStage = ({ onCompose }: Props) => {
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") handleAdd();
+  };
+
+  const handleCopy = async () => {
+    const header = `✨ ${currentLabel} — Gratitude List\n${"─".repeat(32)}\n`;
+    const body = items
+      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy 'at' h:mm a")}`)
+      .join("\n\n");
+    await navigator.clipboard.writeText(header + "\n" + body);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -139,12 +150,22 @@ const CollectStage = ({ onCompose }: Props) => {
       </div>
 
       {items.length > 0 && (
-        <Button
-          onClick={() => onCompose(selectedMonth)}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
-        >
-          Compose with {items.length} item{items.length !== 1 ? "s" : ""}
-        </Button>
+        <div className="w-full space-y-2">
+          <Button
+            onClick={handleCopy}
+            variant="outline"
+            className="w-full border-border text-muted-foreground hover:text-foreground py-5 text-sm"
+          >
+            {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
+            {copied ? "Copied!" : "Copy list to clipboard"}
+          </Button>
+          <Button
+            onClick={() => onCompose(selectedMonth)}
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
+          >
+            Compose with {items.length} item{items.length !== 1 ? "s" : ""}
+          </Button>
+        </div>
       )}
     </div>
   );
