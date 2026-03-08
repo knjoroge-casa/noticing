@@ -40,7 +40,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const selectedItems = allItems.filter((i) => selectedIds.has(i.id));
-  const headerText = `${month}`;
+  const headerText = `${month} Gratitude`;
 
   const toggleItem = (id: string) => {
     setSelectedIds((prev) => {
