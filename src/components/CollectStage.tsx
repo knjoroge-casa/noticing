@@ -55,7 +55,7 @@ const CollectStage = ({ onCompose }: Props) => {
   const handleCopy = async () => {
     const header = `✨ ${currentLabel} — Gratitude List\n${"─".repeat(32)}\n`;
     const body = items
-      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy 'at' h:mm a")}`)
+      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy")}`)
       .join("\n\n");
     await navigator.clipboard.writeText(header + "\n" + body);
     setCopied(true);
@@ -131,13 +131,12 @@ const CollectStage = ({ onCompose }: Props) => {
           placeholder="Add something you noticed...."
           className="flex-1 bg-card border-border focus-visible:ring-primary"
         />
-        <Button
+        <button
           onClick={handleAdd}
-          size="icon"
-          className="bg-primary text-primary-foreground hover:bg-primary/90 shrink-0"
+          className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors shrink-0"
         >
           <Plus className="w-5 h-5" />
-        </Button>
+        </button>
       </div>
 
       {/* Items */}
