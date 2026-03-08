@@ -16,8 +16,8 @@ interface Props {
 type FontOption = "sans" | "serif" | "handwritten";
 
 const FONT_MAP: Record<FontOption, { label: string; family: string; className: string }> = {
-  sans: { label: "Soft Sans", family: "Nunito", className: "font-sans-brand" },
-  serif: { label: "Classic Serif", family: "Lora", className: "font-display" },
+  sans: { label: "Poppins", family: "Poppins", className: "font-sans-brand" },
+  serif: { label: "Playfair", family: "Playfair Display", className: "font-display" },
   handwritten: { label: "Handwritten", family: "Indie Flower", className: "font-handwritten" },
 };
 
