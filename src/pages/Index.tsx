@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Heart } from "lucide-react";
 import CollectStage from "@/components/CollectStage";
 import ComposeStage from "@/components/ComposeStage";
 

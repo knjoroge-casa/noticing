@@ -16,9 +16,9 @@ interface Props {
 type FontOption = "sans" | "serif" | "handwritten";
 
 const FONT_MAP: Record<FontOption, { label: string; family: string; className: string }> = {
-  sans: { label: "Bold Sans", family: "Montserrat", className: "font-sans-brand" },
-  serif: { label: "Editorial Serif", family: "Playfair Display", className: "font-display" },
-  handwritten: { label: "Handwritten", family: "Caveat", className: "font-handwritten" },
+  sans: { label: "Soft Sans", family: "Nunito", className: "font-sans-brand" },
+  serif: { label: "Classic Serif", family: "Lora", className: "font-display" },
+  handwritten: { label: "Handwritten", family: "Indie Flower", className: "font-handwritten" },
 };
 
 const CANVAS_W = 1080;
