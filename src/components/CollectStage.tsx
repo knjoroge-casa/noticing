@@ -150,12 +150,22 @@ const CollectStage = ({ onCompose }: Props) => {
       </div>
 
       {items.length > 0 && (
-        <Button
-          onClick={() => onCompose(selectedMonth)}
-          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
-        >
-          Compose with {items.length} item{items.length !== 1 ? "s" : ""}
-        </Button>
+        <div className="w-full space-y-2">
+          <Button
+            onClick={handleCopy}
+            variant="outline"
+            className="w-full border-border text-muted-foreground hover:text-foreground py-5 text-sm"
+          >
+            {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
+            {copied ? "Copied!" : "Copy list to clipboard"}
+          </Button>
+          <Button
+            onClick={() => onCompose(selectedMonth)}
+            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
+          >
+            Compose with {items.length} item{items.length !== 1 ? "s" : ""}
+          </Button>
+        </div>
       )}
     </div>
   );
