@@ -89,6 +89,9 @@ const Index = () => {
           />
         )}
       </main>
+      <footer className="py-4 text-center">
+        <p className="text-xs text-muted-foreground/60">Kui™ 2026</p>
+      </footer>
       </div>
     </div>
   );
