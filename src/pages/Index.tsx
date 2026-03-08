@@ -14,13 +14,23 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+      {/* Abstract background patterns */}
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-dusty-rose/10 blur-3xl" />
+        <div className="absolute top-1/4 -left-24 w-72 h-72 rounded-full bg-periwinkle/10 blur-3xl" />
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-ice-blue/10 blur-3xl" />
+        <div className="absolute -bottom-20 left-1/3 w-64 h-64 rounded-full bg-lilac/10 blur-3xl" />
+        <div className="absolute top-2/3 -right-16 w-56 h-56 rounded-full bg-sage/8 blur-3xl" />
+      </div>
       {/* Header */}
-      <header className="flex flex-col items-center justify-center py-6 px-4">
-        <h1 className="font-display text-2xl font-bold text-foreground tracking-tight">
+      <header className="flex flex-col items-center justify-center py-8 px-4">
+        <h1 className="font-display text-3xl font-bold text-foreground tracking-tight">
           Noticing
         </h1>
-        <p className="text-xs text-muted-foreground tracking-widest uppercase mt-1">because gratitude is really about paying attention</p>
+        <p className="text-xs text-muted-foreground tracking-widest uppercase mt-2 text-center">
+          because gratitude is really about paying attention
+        </p>
       </header>
 
       {/* Steps indicator */}
