@@ -52,7 +52,7 @@ const CollectStage = ({ onCompose }: Props) => {
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
       <h2 className="font-display text-3xl font-bold text-foreground mb-1 text-center">
-        This Month I Noticed
+        Things That Found Me
       </h2>
       <p className="text-muted-foreground text-sm mb-6 text-center">
         the small things, the big things, all the things
@@ -94,7 +94,7 @@ const CollectStage = ({ onCompose }: Props) => {
           value={text}
           onChange={(e) => setText(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Add something you're grateful for..."
+          placeholder="Add something you noticed...."
           className="flex-1 bg-card border-border focus-visible:ring-primary"
         />
         <Button
