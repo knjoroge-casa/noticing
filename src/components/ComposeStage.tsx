@@ -133,7 +133,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
     ctx.fillText(headerText, x, y);
 
     // Items
-    ctx.font = `bold ${itemSize}px '${fontFamily}', sans-serif`;
+    ctx.font = `${itemSize}px '${fontFamily}', sans-serif`;
     selectedItems.forEach((item, i) => {
       ctx.fillText(item.text, x, y + (i + 1.5) * lineHeight);
     });
