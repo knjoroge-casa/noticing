@@ -23,6 +23,7 @@ const CollectStage = ({ onCompose }: Props) => {
   const [selectedMonth, setSelectedMonth] = useState(getCurrentMonthKey());
   const [items, setItems] = useState<GratitudeItem[]>([]);
   const [showMonths, setShowMonths] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   const months = getAllMonths();
   const currentLabel = getMonthLabelFromKey(selectedMonth);
