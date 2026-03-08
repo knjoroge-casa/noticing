@@ -55,7 +55,7 @@ const CollectStage = ({ onCompose }: Props) => {
   const handleCopy = async () => {
     const header = `✨ ${currentLabel} — Gratitude List\n${"─".repeat(32)}\n`;
     const body = items
-      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy 'at' h:mm a")}`)
+      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy")}`)
       .join("\n\n");
     await navigator.clipboard.writeText(header + "\n" + body);
     setCopied(true);
