@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Plus, Trash2, ChevronDown, Copy, Check } from "lucide-react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -74,13 +75,32 @@ const CollectStage = ({ onCompose }: Props) => {
 
       {/* Month selector */}
       <div className="relative w-full mb-4">
-        <button
-          onClick={() => setShowMonths(!showMonths)}
-          className="w-full flex items-center justify-between px-4 py-3 bg-card rounded-lg border border-border hover:border-primary/40 transition-colors"
-        >
-          <span className="font-semibold text-foreground">{currentLabel}</span>
-          <ChevronDown className="w-4 h-4 text-muted-foreground" />
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowMonths(!showMonths)}
+            className="flex-1 flex items-center justify-between px-4 py-3 bg-card rounded-lg border border-border hover:border-primary/40 transition-colors"
+          >
+            <span className="font-semibold text-foreground">{currentLabel}</span>
+            <ChevronDown className="w-4 h-4 text-muted-foreground" />
+          </button>
+          {items.length > 0 && (
+            <TooltipProvider delayDuration={300}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <button
+                    onClick={handleCopy}
+                    className="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                  >
+                    {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
+                  </button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{copied ? "Copied!" : "Copy list to clipboard"}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+        </div>
         {showMonths && months.length > 0 && (
           <div className="absolute top-full mt-1 w-full bg-card border border-border rounded-lg shadow-lg z-10 overflow-hidden">
             {months.map((m) => (
@@ -150,22 +170,12 @@ const CollectStage = ({ onCompose }: Props) => {
       </div>
 
       {items.length > 0 && (
-        <div className="w-full space-y-2">
-          <Button
-            onClick={handleCopy}
-            variant="outline"
-            className="w-full border-border text-muted-foreground hover:text-foreground py-5 text-sm"
-          >
-            {copied ? <Check className="w-4 h-4 mr-1" /> : <Copy className="w-4 h-4 mr-1" />}
-            {copied ? "Copied!" : "Copy list to clipboard"}
-          </Button>
-          <Button
-            onClick={() => onCompose(selectedMonth)}
-            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
-          >
-            Compose with {items.length} item{items.length !== 1 ? "s" : ""}
-          </Button>
-        </div>
+        <Button
+          onClick={() => onCompose(selectedMonth)}
+          className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-6 text-base"
+        >
+          Compose with {items.length} item{items.length !== 1 ? "s" : ""}
+        </Button>
       )}
     </div>
   );
