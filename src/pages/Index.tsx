@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Heart } from "lucide-react";
 import CollectStage from "@/components/CollectStage";
 import ComposeStage from "@/components/ComposeStage";
 
@@ -17,11 +16,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Header */}
-      <header className="flex items-center justify-center gap-2 py-6 px-4">
-        <Heart className="w-5 h-5 text-primary fill-primary" />
-        <h1 className="font-display text-xl font-bold text-foreground tracking-tight">
-          Grateful
+      <header className="flex flex-col items-center justify-center py-6 px-4">
+        <h1 className="font-display text-2xl font-bold text-foreground tracking-tight">
+          Noticing
         </h1>
+        <p className="text-xs text-muted-foreground tracking-widest uppercase mt-1">because gratitude is really about paying attention</p>
       </header>
 
       {/* Steps indicator */}

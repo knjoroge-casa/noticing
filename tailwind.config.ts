@@ -57,11 +57,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        warm: {
-          glow: "hsl(var(--warm-glow))",
-        },
+        "dusty-rose": "hsl(var(--dusty-rose))",
+        periwinkle: "hsl(var(--periwinkle))",
         sage: "hsl(var(--sage))",
-        cream: "hsl(var(--cream))",
+        "ice-blue": "hsl(var(--ice-blue))",
+        lilac: "hsl(var(--lilac))",
       },
       borderRadius: {
         lg: "var(--radius)",
