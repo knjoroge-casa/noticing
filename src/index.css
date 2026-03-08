@@ -101,12 +101,12 @@
 
 @layer utilities {
   .font-display {
-    font-family: 'Lora', serif;
+    font-family: 'Playfair Display', serif;
   }
   .font-handwritten {
     font-family: 'Indie Flower', cursive;
   }
   .font-sans-brand {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
   }
 }
