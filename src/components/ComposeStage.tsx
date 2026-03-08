@@ -18,7 +18,7 @@ type FontOption = "sans" | "serif" | "handwritten";
 const FONT_MAP: Record<FontOption, { label: string; family: string; className: string }> = {
   sans: { label: "Poppins", family: "Poppins", className: "font-sans-brand" },
   serif: { label: "Playfair", family: "Playfair Display", className: "font-display" },
-  handwritten: { label: "Handwritten", family: "Indie Flower", className: "font-handwritten" },
+  handwritten: { label: "Handwritten", family: "Patrick Hand", className: "font-handwritten" },
 };
 
 const CANVAS_W = 1080;

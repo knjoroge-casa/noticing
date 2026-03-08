@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Patrick+Hand&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -104,7 +104,7 @@
     font-family: 'Playfair Display', serif;
   }
   .font-handwritten {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Patrick Hand', cursive;
   }
   .font-sans-brand {
     font-family: 'Poppins', sans-serif;
