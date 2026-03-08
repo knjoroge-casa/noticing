@@ -40,7 +40,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
   const fileRef = useRef<HTMLInputElement>(null);
 
   const selectedItems = allItems.filter((i) => selectedIds.has(i.id));
-  const headerText = `${month}`;
+  const headerText = `${month} Gratitude`;
 
   const toggleItem = (id: string) => {
     setSelectedIds((prev) => {
@@ -133,7 +133,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
     ctx.fillText(headerText, x, y);
 
     // Items
-    ctx.font = `bold ${itemSize}px '${fontFamily}', sans-serif`;
+    ctx.font = `${itemSize}px '${fontFamily}', sans-serif`;
     selectedItems.forEach((item, i) => {
       ctx.fillText(item.text, x, y + (i + 1.5) * lineHeight);
     });
@@ -204,7 +204,7 @@ const ComposeStage = ({ monthKey, onBack }: Props) => {
             {selectedItems.map((item) => (
               <p
                 key={item.id}
-                className={`text-sm font-bold leading-snug ${fontConfig.className}`}
+                className={`text-sm leading-snug ${fontConfig.className}`}
                 style={{
                   color: "white",
                   textShadow: "1px 1px 8px rgba(0,0,0,0.7)",
