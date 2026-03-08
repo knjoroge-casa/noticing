@@ -52,10 +52,10 @@ const CollectStage = ({ onCompose }: Props) => {
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
       <h2 className="font-display text-3xl font-bold text-foreground mb-1 text-center">
-        Collect
+        This Month I Noticed
       </h2>
       <p className="text-muted-foreground text-sm mb-6 text-center">
-        What are you grateful for?
+        the small things, the big things, all the things
       </p>
 
       {/* Month selector */}
