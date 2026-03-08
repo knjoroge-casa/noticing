@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Plus, Trash2, ChevronDown } from "lucide-react";
+import { format } from "date-fns";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -121,7 +122,12 @@ const CollectStage = ({ onCompose }: Props) => {
             className="flex items-center gap-3 bg-card border border-border rounded-lg px-4 py-3 group animate-in fade-in slide-in-from-bottom-1 duration-200"
             style={{ animationDelay: `${i * 30}ms` }}
           >
-            <span className="flex-1 text-foreground text-sm">{item.text}</span>
+            <div className="flex-1 min-w-0">
+              <span className="text-foreground text-sm">{item.text}</span>
+              <span className="block text-[10px] text-muted-foreground/60 mt-0.5">
+                {format(new Date(item.createdAt), "dd/MM/yy HH:mm")}
+              </span>
+            </div>
             <button
               onClick={() => handleRemove(item.id)}
               className="opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-destructive"
