@@ -14,7 +14,8 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-background flex flex-col items-center relative overflow-hidden">
+      <div className="w-full max-w-xl mx-auto min-h-screen flex flex-col border-x border-border bg-card/30 backdrop-blur-sm relative z-10">
       {/* Abstract background patterns */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
         {/* Blobs */}
