@@ -17,6 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
       {/* Abstract background patterns */}
       <div className="pointer-events-none fixed inset-0 overflow-hidden">
+        {/* Blobs */}
         <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-dusty-rose/20 blur-2xl" />
         <div className="absolute top-1/4 -left-16 w-64 h-64 rounded-full bg-periwinkle/20 blur-2xl" />
         <div className="absolute bottom-1/3 right-1/4 w-72 h-72 rounded-full bg-ice-blue/20 blur-2xl" />
@@ -24,9 +25,41 @@ const Index = () => {
         <div className="absolute top-1/2 right-0 w-48 h-48 rounded-full bg-sage/15 blur-2xl" />
         <div className="absolute top-10 left-1/2 w-40 h-40 rounded-full bg-dusty-rose/15 blur-xl" />
         <div className="absolute top-3/4 left-10 w-60 h-60 rounded-full bg-periwinkle/15 blur-2xl" />
-        <div className="absolute top-20 right-1/3 w-44 h-44 rounded-full bg-ice-blue/15 blur-xl" />
         <div className="absolute bottom-10 right-10 w-52 h-52 rounded-full bg-sage/20 blur-2xl" />
-        <div className="absolute top-1/3 left-1/4 w-36 h-36 rounded-full bg-lilac/15 blur-xl" />
+        {/* Diagonal lines */}
+        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="diag-lines" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+              <line x1="0" y1="0" x2="0" y2="40" stroke="currentColor" strokeWidth="1" className="text-foreground" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#diag-lines)" />
+        </svg>
+        {/* Cross-hatch accent */}
+        <svg className="absolute top-1/4 right-0 w-96 h-96 opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="cross" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M0 12h24M12 0v24" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#cross)" />
+        </svg>
+        {/* Dotted grid */}
+        <svg className="absolute bottom-0 left-0 w-80 h-80 opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="currentColor" className="text-foreground" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+        </svg>
+        {/* Concentric circles */}
+        <svg className="absolute top-10 left-10 w-64 h-64 opacity-[0.04]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
+          <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
+          <circle cx="100" cy="100" r="100" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
+        </svg>
       </div>
       {/* Header */}
       <header className="flex flex-col items-center justify-center py-8 px-4">
