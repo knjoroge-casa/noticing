@@ -52,7 +52,7 @@ const CollectStage = ({ onCompose }: Props) => {
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
       <h2 className="font-display text-3xl font-bold text-foreground mb-1 text-center">
-        This Month I Noticed
+        Things That Found Me
       </h2>
       <p className="text-muted-foreground text-sm mb-6 text-center">
         the small things, the big things, all the things
