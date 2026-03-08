@@ -51,9 +51,14 @@ const CollectStage = ({ onCompose }: Props) => {
 
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
-      <p className="text-muted-foreground text-sm mb-6 text-center max-w-sm leading-relaxed">
-        Some days you go looking for joy. Some days it taps you on the shoulder. In a mango that tastes exactly right, a friend who shows up, a walk that clears your head. And sometimes it's in the hard things too, the ones that stretched you, broke you open a little, taught you something you didn't know. Notice all of them.
-      </p>
+      <div className="bg-card/60 backdrop-blur-sm border border-border rounded-xl px-5 py-5 mb-6 max-w-sm text-center">
+        <p className="text-muted-foreground text-sm leading-relaxed">
+          Some days you go looking for joy. Some days it taps you on the shoulder. In a mango that tastes exactly right, a friend who shows up, a walk that clears your head. And sometimes it's in the hard things too, the ones that stretched you, broke you open a little, taught you something you didn't know.
+        </p>
+        <p className="text-foreground font-display font-semibold text-sm mt-3">
+          Notice all of them.
+        </p>
+      </div>
 
       {/* Month selector */}
       <div className="relative w-full mb-4">

@@ -27,38 +27,44 @@ const Index = () => {
         <div className="absolute top-3/4 left-10 w-60 h-60 rounded-full bg-periwinkle/15 blur-2xl" />
         <div className="absolute bottom-10 right-10 w-52 h-52 rounded-full bg-sage/20 blur-2xl" />
         {/* Diagonal lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.04]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.06 }} xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="diag-lines" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-              <line x1="0" y1="0" x2="0" y2="40" stroke="currentColor" strokeWidth="1" className="text-foreground" />
+              <line x1="0" y1="0" x2="0" y2="40" stroke="hsl(240 15% 15%)" strokeWidth="1" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#diag-lines)" />
         </svg>
         {/* Cross-hatch accent */}
-        <svg className="absolute top-1/4 right-0 w-96 h-96 opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute top-1/4 right-0 w-[500px] h-[500px]" style={{ opacity: 0.05 }} xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="cross" width="24" height="24" patternUnits="userSpaceOnUse">
-              <path d="M0 12h24M12 0v24" stroke="currentColor" strokeWidth="0.5" className="text-foreground" />
+              <path d="M0 12h24M12 0v24" stroke="hsl(250 30% 65%)" strokeWidth="0.5" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#cross)" />
         </svg>
         {/* Dotted grid */}
-        <svg className="absolute bottom-0 left-0 w-80 h-80 opacity-[0.05]" xmlns="http://www.w3.org/2000/svg">
+        <svg className="absolute bottom-0 left-0 w-[400px] h-[400px]" style={{ opacity: 0.08 }} xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1" fill="currentColor" className="text-foreground" />
+              <circle cx="2" cy="2" r="1.2" fill="hsl(250 30% 65%)" />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#dots)" />
         </svg>
         {/* Concentric circles */}
-        <svg className="absolute top-10 left-10 w-64 h-64 opacity-[0.04]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-          <circle cx="100" cy="100" r="30" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
-          <circle cx="100" cy="100" r="55" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
-          <circle cx="100" cy="100" r="80" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
-          <circle cx="100" cy="100" r="100" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-periwinkle" />
+        <svg className="absolute top-10 left-10 w-72 h-72" style={{ opacity: 0.07 }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="30" fill="none" stroke="hsl(250 35% 70%)" strokeWidth="0.8" />
+          <circle cx="100" cy="100" r="55" fill="none" stroke="hsl(250 35% 70%)" strokeWidth="0.8" />
+          <circle cx="100" cy="100" r="80" fill="none" stroke="hsl(250 35% 70%)" strokeWidth="0.8" />
+          <circle cx="100" cy="100" r="100" fill="none" stroke="hsl(250 35% 70%)" strokeWidth="0.8" />
+        </svg>
+        {/* Concentric circles bottom-right */}
+        <svg className="absolute bottom-20 right-20 w-60 h-60" style={{ opacity: 0.05 }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="40" fill="none" stroke="hsl(345 30% 72%)" strokeWidth="0.8" />
+          <circle cx="100" cy="100" r="70" fill="none" stroke="hsl(345 30% 72%)" strokeWidth="0.8" />
+          <circle cx="100" cy="100" r="95" fill="none" stroke="hsl(345 30% 72%)" strokeWidth="0.8" />
         </svg>
       </div>
       {/* Header */}
