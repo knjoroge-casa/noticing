@@ -51,6 +51,16 @@ const CollectStage = ({ onCompose }: Props) => {
     if (e.key === "Enter") handleAdd();
   };
 
+  const handleCopy = async () => {
+    const header = `✨ ${currentLabel} — Gratitude List\n${"─".repeat(32)}\n`;
+    const body = items
+      .map((item, i) => `${i + 1}. ${item.text}\n   ${format(new Date(item.createdAt), "MMM d, yyyy 'at' h:mm a")}`)
+      .join("\n\n");
+    await navigator.clipboard.writeText(header + "\n" + body);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="flex flex-col items-center w-full max-w-md mx-auto px-4 pb-8">
       <div className="bg-card/60 backdrop-blur-sm border border-border rounded-xl px-5 py-5 mb-6 max-w-sm text-center">
